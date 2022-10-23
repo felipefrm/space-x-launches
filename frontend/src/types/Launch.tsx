@@ -7,7 +7,5 @@ export type Launch = {
   date_utc: string;
   flight_number: number;
   success: boolean;
-  tbd: boolean;
-  net: boolean;
   links: Links 
 }

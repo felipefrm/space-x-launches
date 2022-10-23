@@ -1,8 +1,13 @@
 import { Routes } from "./routes"
+import { Modal } from "./components/Modal";
+import { ModalProvider } from "./contexts/modal";
 
 function App() {
   return (
-    <Routes />
+    <ModalProvider>
+      <Routes />
+      <Modal />
+    </ModalProvider>
   )
 }
 
