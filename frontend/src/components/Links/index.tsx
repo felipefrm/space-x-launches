@@ -1,7 +1,8 @@
-import { Links as LinksType } from "../../types/Links"
 import colors from 'tailwindcss/colors'
 import { FaYoutube, FaReddit, FaWikipediaW } from "react-icons/fa";
-import { GrArticle } from "react-icons/gr";
+import { BsNewspaper } from "react-icons/bs";
+
+import { Links as LinksType } from "../../types/Links"
 
 import { LinkItem } from "./LinkItem";
 
@@ -11,7 +12,7 @@ interface LinksProps {
 
 export function Links({ items }: LinksProps) {
   return (
-    <div className="flex flex-row gap-1 justify-end">
+    <div className="flex flex-row gap-1">
       <LinkItem link={items.webcast} title="Watch on Youtube">
         <FaYoutube size={24} color={colors.neutral['400']} />
       </LinkItem>
@@ -25,7 +26,7 @@ export function Links({ items }: LinksProps) {
       </LinkItem>
 
       <LinkItem link={items.article} title="Read related article">
-        <GrArticle size={24} color={colors.neutral['400']} />
+        <BsNewspaper size={24} color={colors.neutral['400']} />
       </LinkItem>
     </div >
   )

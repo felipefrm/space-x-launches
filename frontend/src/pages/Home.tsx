@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { CardButton } from "../components/Card/CardButton";
 import { CardMission } from "../components/Card/CardMission";
 import api from "../services/api";
@@ -6,7 +7,6 @@ import api from "../services/api";
 import { Launch } from '../types/Launch'
 
 export function Home() {
-
   const [nextLaunch, setNextLaunch] = useState<Launch>({} as Launch);
   const [latestLaunch, setLatestLaunch] = useState<Launch>({} as Launch);
 
@@ -40,12 +40,12 @@ export function Home() {
         <div className="flex h-full">
           <div className="flex flex-1 justify-center items-center flex-wrap gap-2">
             <div className="flex flex-col gap-2 w-[500px]">
-              <CardMission data={nextLaunch} isLoading={isLoadingNextLaunch} title="Next launch" />
-              <CardButton title="See all past missions" />
+              <CardMission type="upcoming" data={nextLaunch} isLoading={isLoadingNextLaunch} title="Next launch" />
+              <CardButton type="upcoming" title="See all upcoming missions" />
             </div>
             <div className="flex flex-col gap-2 w-[500px]">
-              <CardMission data={latestLaunch} isLoading={isLoadingLatestLaunch} title="Latest launch" />
-              <CardButton title="See all upcoming missions" />
+              <CardMission type="past" data={latestLaunch} isLoading={isLoadingLatestLaunch} title="Latest launch" />
+              <CardButton type="past" title="See all past missions" />
             </div>
           </div>
         </div>
