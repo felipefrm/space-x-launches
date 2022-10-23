@@ -1,6 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 
-import { Card } from "./Card";
+import { Card } from ".";
 
 interface CardButtonProps {
   title: string;

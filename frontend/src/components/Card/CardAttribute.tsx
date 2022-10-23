@@ -1,8 +1,13 @@
-export function CardAttribute() {
+interface CardAttributeProps {
+  title?: string;
+  description?: string | number;
+}
+
+export function CardAttribute({title, description}: CardAttributeProps) {
   return (
     <div className="font-bold">
-      <p className="uppercase text-neutral-400">Mission</p>
-      <p className="text-white text-lg">Starlink 4-36</p>
+      <p className="uppercase text-neutral-400">{title}</p>
+      <p className="text-white text-lg">{description}</p>
     </div>
   )
 }
