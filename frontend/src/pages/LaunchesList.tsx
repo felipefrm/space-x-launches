@@ -20,7 +20,7 @@ export function LaunchesList({ type }: LaunchesListProps) {
     async function loadLaunches() {
       setIsLoadingLaunches(true);
       const { data } = await api.get(`/launches/${type}`);
-      setLaunches(data);
+      setLaunches(data.map((launch: Launch) => launch).reverse());
       setIsLoadingLaunches(false)
     }
   }, [])
