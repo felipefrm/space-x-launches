@@ -10,6 +10,6 @@ router.get('/launches/latest', launchesController.getLatestLaunch);
 router.get('/launches/next', launchesController.getNextLaunch);
 router.get('/launches/upcoming', launchesController.getAllUpcomingLaunches);
 router.get('/launches/past', launchesController.getAllPastLaunches);
-router.get('/launches/:id', launchesController.getLaunchById);
+router.get('/launches/:id', launchesController.getLaunchDetails);
 
 export { router }

@@ -46,7 +46,7 @@ export function ListItem({ data, type }: ListItemProps) {
         </div>
       </div>
       <div className="self-end text-end mt-4">
-        <ButtonDetails text="Show more details" />
+        <ButtonDetails launchId={data.id} text="Show more details" />
       </div>
     </div>
   )

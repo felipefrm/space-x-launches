@@ -57,7 +57,7 @@ export function CardMission({ type, data, title, isLoading }: CardMissionProps) 
           </div>
         </div>
         <div className="flex justify-between">
-          <ButtonDetails text="Show details" />
+          <ButtonDetails launchId={data.id} text="Show details" />
           <div className="flex justify-end">
             <Links items={data.links} />
           </div>

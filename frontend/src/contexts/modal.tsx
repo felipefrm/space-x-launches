@@ -6,6 +6,8 @@ interface ModalProviderPros {
 
 interface ModalContextData {
   isOpen: boolean;
+  data: any;
+  setData: (data: any) => void;
   openModal: () => void;
   closeModal: () => void;
 }
@@ -14,6 +16,7 @@ const ModalContext = createContext<ModalContextData>({} as ModalContextData);
 
 export function ModalProvider({ children }: ModalProviderPros) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [data, setData] = useState<any>(null)
 
   function closeModal() {
     setIsOpen(false);
@@ -24,7 +27,7 @@ export function ModalProvider({ children }: ModalProviderPros) {
   }
 
   return (
-    <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <ModalContext.Provider value={{ isOpen, openModal, closeModal, data, setData }}>
       {children}
     </ModalContext.Provider>
   )

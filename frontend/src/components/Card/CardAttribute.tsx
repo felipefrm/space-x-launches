@@ -3,7 +3,11 @@ interface CardAttributeProps {
   description?: string | number;
 }
 
-export function CardAttribute({title, description}: CardAttributeProps) {
+export function CardAttribute({ title, description }: CardAttributeProps) {
+  if (description === undefined || description === null) {
+    return null;
+  }
+
   return (
     <div className="font-bold">
       <p className="uppercase text-neutral-400">{title}</p>
