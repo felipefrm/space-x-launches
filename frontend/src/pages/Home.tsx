@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import { CardButton } from "../components/Card/CardButton";
 import { CardMission } from "../components/Card/CardMission";
@@ -21,15 +22,27 @@ export function Home() {
 
     async function loadNextLaunch() {
       setIsLoadingNextLaunch(true);
-      const { data } = await api.get("/launches/next");
-      setNextLaunch(data);
+
+      try {
+        const { data } = await api.get("/launches/next");
+        setNextLaunch(data);
+      } catch (error) {
+        toast('Something went wrong while loading next launch', { type: 'error', position: 'top-center' });
+      }
+
       setIsLoadingNextLaunch(false)
     }
 
     async function loadLatestLaunch() {
       setIsLoadingLatestLaunch(true);
-      const { data } = await api.get("/launches/latest");
-      setLatestLaunch(data);
+
+      try {
+        const { data } = await api.get("/launches/latest");
+        setLatestLaunch(data);
+      } catch (error) {
+        toast('Something went wrong while loading latest launch', { type: 'error', position: 'top-center' });
+      }
+
       setIsLoadingLatestLaunch(false);
     }
   }, [])

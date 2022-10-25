@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaSpinner } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 import api from "../services/api";
 import { Launch } from "../types/Launch";
@@ -20,8 +21,14 @@ export function LaunchesList({ type }: LaunchesListProps) {
 
     async function loadLaunches() {
       setIsLoadingLaunches(true);
-      const { data } = await api.get(`/launches/${type}`);
-      setLaunches(data.map((launch: Launch) => launch).reverse());
+
+      try {
+        const { data } = await api.get(`/launches/${type}`);
+        setLaunches(data.map((launch: Launch) => launch).reverse());
+      } catch (error) {
+        toast(`Something went wrong while loading ${type} launches`, { type: 'error', position: 'top-center' });
+      }
+
       setIsLoadingLaunches(false)
     }
   }, [])

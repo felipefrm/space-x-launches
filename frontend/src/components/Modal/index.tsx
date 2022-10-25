@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import { useModal } from '../../contexts/modal';
 import api from '../../services/api';
@@ -8,7 +9,7 @@ import { LaunchDetails } from '../../types/LaunchDetails';
 import { ModalContent } from './ModalContent';
 
 export function Modal() {
-  const { isOpen, closeModal, data } = useModal();
+  const { isOpen, closeModal } = useModal();
 
   const [launch, setLaunch] = useState<LaunchDetails>({} as LaunchDetails);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -19,8 +20,15 @@ export function Modal() {
 
       async function loadLaunchDetails() {
         setIsLoading(true);
-        const response = await api.get(`/launches/${data.id}`);
-        setLaunch(response.data);
+
+        try {
+          const response = await api.get(`/launches/sasa`);
+          setLaunch(response.data);
+        } catch (error) {
+          toast('Something went wrong while loading launch details', { type: 'error', position: 'top-center' });
+          closeModal();
+        }
+
         setIsLoading(false);
       }
     }
