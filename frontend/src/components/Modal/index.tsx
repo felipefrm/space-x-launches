@@ -9,7 +9,7 @@ import { LaunchDetails } from '../../types/LaunchDetails';
 import { ModalContent } from './ModalContent';
 
 export function Modal() {
-  const { isOpen, closeModal } = useModal();
+  const { isOpen, closeModal, data } = useModal();
 
   const [launch, setLaunch] = useState<LaunchDetails>({} as LaunchDetails);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -22,7 +22,7 @@ export function Modal() {
         setIsLoading(true);
 
         try {
-          const response = await api.get(`/launches/sasa`);
+          const response = await api.get(`/launches/${data.id}`);
           setLaunch(response.data);
         } catch (error) {
           toast('Something went wrong while loading launch details', { type: 'error', position: 'top-center' });
