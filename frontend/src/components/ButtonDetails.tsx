@@ -11,7 +11,7 @@ export function ButtonDetails({ launchId, text }: ButtonDetailsProps) {
   const { openModal, setData } = useModal();
 
   function handleModal() {
-    setData(launchId);
+    setData({ id: launchId });
     openModal();
   }
 

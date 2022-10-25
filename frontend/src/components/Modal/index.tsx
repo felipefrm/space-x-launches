@@ -21,7 +21,7 @@ export function Modal() {
 
       async function loadLaunchDetails() {
         setIsLoading(true);
-        const response = await api.get(`/launches/${data}`);
+        const response = await api.get(`/launches/${data.id}`);
         setLaunch(response.data);
         setIsLoading(false);
       }
@@ -92,7 +92,7 @@ export function Modal() {
                           <h2 className="text-2xl font-bold">Payloads</h2>
                           <div className='flex flex-col gap-4'>
                             {launch.payloads.map((payload, idx) => (
-                              <PayloadCard payload={payload} index={idx} />
+                              <PayloadCard payload={payload} index={idx} key={payload.id} />
                             ))}
                           </div>
                         </div>

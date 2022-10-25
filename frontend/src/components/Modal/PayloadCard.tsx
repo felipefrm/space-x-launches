@@ -8,7 +8,7 @@ interface PayloadCardProps {
 
 export function PayloadCard({ payload, index }: PayloadCardProps) {
   return (
-    <div key={payload.id} className='p-6 border-4 rounded-xl'>
+    <div className='p-6 border-4 rounded-xl'>
       <h2 className="text-neutral-900 text-2xl font-bold mb-4">Payload #{index}</h2>
       <div className="flex gap-8 flex-wrap">
         <CardAttribute theme="light" title='Name' description={payload.name} />

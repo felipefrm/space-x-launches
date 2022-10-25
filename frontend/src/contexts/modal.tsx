@@ -6,8 +6,8 @@ interface ModalProviderPros {
 
 interface ModalContextData {
   isOpen: boolean;
-  data: any;
-  setData: (data: any) => void;
+  data: { id: string };
+  setData: (data: { id: string }) => void;
   openModal: () => void;
   closeModal: () => void;
 }
