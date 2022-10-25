@@ -1,4 +1,5 @@
 export type Launchpad = {
+  id: string;
   details: string;
   full_name: string;
   images: {

@@ -1,4 +1,5 @@
 export type Rocket = {
+  id: string;
   active: boolean;
   company: string;
   country: string;

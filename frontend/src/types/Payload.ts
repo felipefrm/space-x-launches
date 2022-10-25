@@ -1,4 +1,5 @@
 export type Payload = {
+  id: string;
   customers: string[];
   manufacturers: string[];
   mass_kg: number;

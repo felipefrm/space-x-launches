@@ -2,7 +2,7 @@ import { format } from "date-fns";
 
 import { Launch } from "../../types/Launch";
 import { ButtonDetails } from "../ButtonDetails";
-import { CardAttribute } from "../Card/CardAttribute";
+import { CardAttribute } from "../Attribute";
 import { Countdown } from "../Countdown";
 import { Links } from "../Links";
 import { Patch } from "../Patch";

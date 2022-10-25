@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { FaSpinner } from "react-icons/fa";
 
 import { Card } from ".";
-import { CardAttribute } from "./CardAttribute";
+import { CardAttribute } from "../Attribute";
 import { Patch } from "../Patch";
 import { Launch } from "../../types/Launch";
 import { Countdown } from "../Countdown";
