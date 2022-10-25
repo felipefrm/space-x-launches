@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { FaSpinner } from "react-icons/fa";
+import { FaArrowLeft, FaSpinner } from "react-icons/fa";
 
 import api from "../services/api";
 import { Launch } from "../types/Launch";
 
 import { ListItem } from "../components/ListItem";
+import { Link } from "react-router-dom";
 
 interface LaunchesListProps {
   type: "upcoming" | "past";
@@ -30,6 +31,9 @@ export function LaunchesList({ type }: LaunchesListProps) {
       <div className="w-full backdrop-blur-md overflow-y-scroll">
         <div className="container my-10 flex flex-col gap-2 m-auto w-[900px]">
           <h1 className="text-4xl font-bold text-white flex gap-2 items-end">
+            <Link to="/">
+              <FaArrowLeft className="mr-4 hover:opacity-30 transition-opacity" />
+            </Link>
             All {type} launches{' '}
             {
               isLoadingLaunches ? (
