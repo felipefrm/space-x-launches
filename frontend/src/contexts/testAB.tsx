@@ -1,5 +1,12 @@
 import { createContext, ReactNode, useContext, useState, useEffect } from 'react'
 
+declare global {
+  interface Window {
+    dataLayer: any;
+    google_optimize: any
+  }
+}
+
 interface TestABProviderPros {
   children: ReactNode;
 }
