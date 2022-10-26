@@ -32,7 +32,7 @@ $ npm run dev
 
 ```bash
 # Navegue para o diretório do frontend
-$ cd web
+$ cd frontend
 
 # Instale as dependências
 $ npm install
