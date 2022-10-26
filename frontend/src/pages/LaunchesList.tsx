@@ -17,9 +17,8 @@ export function LaunchesList({ type }: LaunchesListProps) {
   const [launches, setLaunches] = useState<Launch[]>([]);
   const [isLoadingLaunches, setIsLoadingLaunches] = useState(true);
 
+  // TODO: get A/B test variant from context and use to display custom background
   const { variant } = useTestAB();
-
-  console.log(variant)
 
   useEffect(() => {
     loadLaunches();

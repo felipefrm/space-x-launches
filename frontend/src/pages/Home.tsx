@@ -15,9 +15,8 @@ export function Home() {
   const [isLoadingNextLaunch, setIsLoadingNextLaunch] = useState(true);
   const [isLoadingLatestLaunch, setIsLoadingLatestLaunch] = useState(true);
 
+  // TODO: get A/B test variant from context and use to display custom background
   const { variant } = useTestAB();
-
-  console.log(variant)
 
   useEffect(() => {
     loadNextLaunch();
