@@ -25,7 +25,7 @@ export function CardAttribute({ title, description, theme }: CardAttributeProps)
   return (
     <div className="font-bold">
       <p className={`uppercase ${style[theme].title}`}>{title}</p>
-      <p className={`${style[theme].description} text-lg`}>{description}</p>
+      <p className={`${style[theme].description}`}>{description}</p>
     </div>
   )
 }

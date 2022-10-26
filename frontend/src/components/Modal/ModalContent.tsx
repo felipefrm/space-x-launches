@@ -55,8 +55,7 @@ export function ModalContent({ isLoading, data, closeModal }: ModalContentProps)
                       image={{
                         src: data.rockets[0].flickr_images[0],
                         alt: data.rockets[0].name,
-                        width: 300,
-                        height: 400,
+                        size: "medium",
                       }}
                       labels={[
                         { title: 'Name', description: data.rockets[0].name },
@@ -80,8 +79,7 @@ export function ModalContent({ isLoading, data, closeModal }: ModalContentProps)
                       image={{
                         src: data.launchpads[0].images.large[0],
                         alt: data.launchpads[0].name,
-                        width: 300,
-                        height: 400,
+                        size: "medium",
                       }}
                       labels={[
                         { title: 'Name', description: data.launchpads[0].name },
@@ -108,8 +106,7 @@ export function ModalContent({ isLoading, data, closeModal }: ModalContentProps)
                         image={{
                           src: crew.image,
                           alt: crew.name,
-                          width: 200,
-                          height: 300,
+                          size: "small",
                         }}
                         labels={[
                           { title: 'Name', description: crew.name },
