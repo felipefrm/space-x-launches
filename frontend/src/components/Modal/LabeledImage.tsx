@@ -17,7 +17,7 @@ export function LabeledImage({ image, labels }: LabeledImageProps) {
   return (
     <div className='relative'>
       <img
-        className={`rounded-md h-[${image.height}px] max-w-[${image.width}px] object-cover`}
+        className={`rounded-md h-[${String(image.height)}px] max-w-[${String(image.width)}px] object-cover`}
         src={image.src}
         alt={image.alt}
         referrerPolicy="no-referrer"

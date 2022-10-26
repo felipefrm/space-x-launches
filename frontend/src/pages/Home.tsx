@@ -52,11 +52,11 @@ export function Home() {
       <div className="w-full backdrop-blur-md">
         <div className="flex h-full">
           <div className="flex flex-1 justify-center items-center flex-wrap gap-2">
-            <div className="flex flex-col gap-2 w-[500px]">
+            <div className="flex flex-col gap-2 sm:w-[500px]">
               <CardMission type="upcoming" data={nextLaunch} isLoading={isLoadingNextLaunch} title="Next launch" />
               <CardButton type="upcoming" title="See all upcoming missions" />
             </div>
-            <div className="flex flex-col gap-2 w-[500px]">
+            <div className="flex flex-col gap-2 sm:w-[500px]">
               <CardMission type="past" data={latestLaunch} isLoading={isLoadingLatestLaunch} title="Latest launch" />
               <CardButton type="past" title="See all past missions" />
             </div>
