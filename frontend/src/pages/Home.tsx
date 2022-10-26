@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 
 import { CardButton } from "../components/Card/CardButton";
 import { CardMission } from "../components/Card/CardMission";
+import { useTestAB } from "../contexts/testAB";
 import api from "../services/api";
 
 import { Launch } from '../types/Launch'
@@ -14,7 +15,9 @@ export function Home() {
   const [isLoadingNextLaunch, setIsLoadingNextLaunch] = useState(true);
   const [isLoadingLatestLaunch, setIsLoadingLatestLaunch] = useState(true);
 
-  console.log(isLoadingNextLaunch)
+  const { variant } = useTestAB();
+
+  console.log(variant)
 
   useEffect(() => {
     loadNextLaunch();
@@ -48,7 +51,7 @@ export function Home() {
   }, [])
 
   return (
-    <main className="bg-hero-pattern min-h-screen bg-bottom bg-cover flex">
+    <main className="bg-sunset min-h-screen bg-bottom bg-cover flex">
       <div className="w-full backdrop-blur-md">
         <div className="flex h-full">
           <div className="flex flex-1 justify-center items-center flex-wrap gap-2">

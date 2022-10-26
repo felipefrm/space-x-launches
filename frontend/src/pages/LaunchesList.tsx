@@ -7,6 +7,7 @@ import { Launch } from "../types/Launch";
 
 import { ListItem } from "../components/ListItem";
 import { Link } from "react-router-dom";
+import { useTestAB } from "../contexts/testAB";
 
 interface LaunchesListProps {
   type: "upcoming" | "past";
@@ -15,6 +16,10 @@ interface LaunchesListProps {
 export function LaunchesList({ type }: LaunchesListProps) {
   const [launches, setLaunches] = useState<Launch[]>([]);
   const [isLoadingLaunches, setIsLoadingLaunches] = useState(true);
+
+  const { variant } = useTestAB();
+
+  console.log(variant)
 
   useEffect(() => {
     loadLaunches();
@@ -34,7 +39,7 @@ export function LaunchesList({ type }: LaunchesListProps) {
   }, [])
 
   return (
-    <main className="bg-hero-pattern h-screen bg-bottom bg-cover flex">
+    <main className="bg-sunset h-screen bg-bottom bg-cover flex">
       <div className="w-full backdrop-blur-md overflow-y-scroll">
         <div className="container my-10 flex flex-col gap-2 m-auto max-w-[900px]">
           <h1 className="text-4xl font-bold text-white flex gap-2 items-end">
